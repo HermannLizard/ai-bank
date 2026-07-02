@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { Icon, Button, Popup, Loading, Picker } from 'vant'
+import { Icon, Button, Popup, Loading, Picker, Toast } from 'vant'
 
 Vue.use(Icon)
 Vue.use(Button)
 Vue.use(Popup)
 Vue.use(Loading)
 Vue.use(Picker)
+Vue.use(Toast)
 
 Vue.config.productionTip = false
 

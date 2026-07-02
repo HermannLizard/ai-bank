@@ -19,7 +19,7 @@ module.exports = defineConfig({
       entry: 'src/pages/chat/main.js',
       template: 'public/index.html',
       filename: 'chat.html',
-      title: '小京'
+      title: '北京银行AI次方'
     }
   }
 })

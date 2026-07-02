@@ -5,6 +5,9 @@
  * 后端联通后，把 index.js 里的 useMock 关掉即可无缝切换到真实接口。
  */
 
+// 运营位 banner 图：随项目一起打包，webpack 会解析为最终可访问的 URL
+import assetsAllocateImg from '../../pages/chat/assets/img/assets-allocate.png'
+
 function genId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 8)
 }
@@ -53,7 +56,7 @@ function buildScenario(body) {
 
   // ============ 养老规划：对话式采集 ============
   // 环节1：自由提问触发 → 个人信息确认
-  if (/养老/.test(text) && !eventType) {
+  if (/养老/.test(text) && (!eventType || eventType === 'suggest_use')) {
     return {
       nodes: ['问题归类', '读取个人信息'],
       answer: [
@@ -62,7 +65,7 @@ function buildScenario(body) {
           type: 'rich-text',
           payload: '<h2>您好，关女士</h2><p>养老规划，铸就幸福养老生活。</p><p>请您参与<b><u>下方问答</u></b>，我们将为您测算生成专属养老资金配置方案。</p>'
         },
-        { scene: 'pension', type: 'ui-pension-personal-detail-confirm', payload: { age: 27, begin: 22, end: 55, location: '北京市' } }
+        { scene: 'pension', type: 'ui-pension-personal-detail-confirm', payload: { age: 52, begin: 21, end: 55, location: '北京市' } }
       ]
     }
   }
@@ -209,7 +212,7 @@ function buildScenario(body) {
           type: 'ui-generic-banner',
           payload: {
             name: 'assets-allocate',
-            img: 'https://cdnmobibank.bankofbeijing.com.cn/cdn/tresources/xxkjzImg/image/202606151525472.png',
+            img: assetsAllocateImg,
           }
         }
       ]
@@ -276,7 +279,7 @@ function buildScenario(body) {
           type: 'ui-generic-banner',
           payload: {
             name: 'assets-allocate',
-            img: 'https://cdnmobibank.bankofbeijing.com.cn/cdn/tresources/xxkjzImg/image/202606151525472.png',
+            img: assetsAllocateImg,
           }
         },
         { scene: '', type: 'suggest', payload: [
@@ -336,7 +339,14 @@ function buildScenario(body) {
       {
         scene: 'chat',
         type: 'text',
-        payload: `您说的是「${text || '(空)'}」。这是 Mock 回复，后端接通后将返回真实结果～`
+        payload: `小京当前使用的是模拟数据，只能回答有限的问题哦，您可以这么问：`
+      },
+      { scene: '', type: 'suggest', payload: [
+          { scene: '', question: '给小京转账100元' },
+          { scene: '', question: '最近有什么好的理财推荐' },
+          { scene: '', question: '帮我分析一下持仓收益' },
+          { scene: '', question: '盘一盘我的养老规划' },
+        ]
       }
     ]
   }

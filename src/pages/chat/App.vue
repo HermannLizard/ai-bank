@@ -15,9 +15,9 @@
 
     <template v-if="!started">
       <!-- 常用功能区（demo 阶段整体用一张图代替） -->
-      <img class="shortcuts-img" :src="shortcutsImg" alt="常用功能" />
+      <img class="shortcuts-img" :src="shortcutsImg" alt="常用功能" @click="toastOutOfApp" />
       <!-- 大家都在问（demo 阶段整体用一张图代替） -->
-      <img class="faq-img" :src="faqImg" alt="大家都在问" />
+      <img class="faq-img" :src="faqImg" alt="大家都在问" @click="toastOutOfApp" />
 
       <div class="placeholder"></div>
     </template>
@@ -194,6 +194,7 @@
 
 <script>
 import { runChat } from '../../api/dify/chat'
+import { toastOutOfApp } from '../../utils/toast'
 import TransConfirm from './components/TransConfirm.vue'
 import TransSuccess from './components/TransSuccess.vue'
 import ProductTabList from './components/ProductTabList.vue'
@@ -275,6 +276,7 @@ export default {
     b.style.backgroundColor = '#eef3fb'
   },
   methods: {
+    toastOutOfApp,
     goBack() {
       window.location.href = 'index.html'
     },
