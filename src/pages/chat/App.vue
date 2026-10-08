@@ -174,7 +174,7 @@
         <span v-for="tag in tags" :key="tag" class="tag" @click="send({ query: tag })">{{ tag }}</span>
       </div>
       <div class="input-bar">
-        <van-icon name="mic-o" size="20" class="mic" />
+        <van-icon name="play-circle-o" size="20" class="mic" />
         <input
           v-model="inputText"
           class="chat-input"

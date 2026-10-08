@@ -6,9 +6,10 @@ import { mockChatMessages } from './mock'
 import { parseSSE } from './sse'
 
 export const config = {
-  // 后端联通后改为 false
+  // 本地联调走代理，用 false；需要 mock 时改回 true
   useMock: true,
-  baseURL: '/v1',
+  // 前端逻辑地址，本地由 devServer 代理转发到 /serve/msgTest
+  baseURL: '/api/chat',
   apiKey: '',
   user: 'h5-user'
 }
@@ -32,7 +33,7 @@ export function sendChatMessage(body, handlers = {}) {
  * @param {{ onEvent?: (evt: import('./types').DifyEvent) => void, signal?: AbortSignal }} handlers
  */
 async function realChatMessages(body, { onEvent, signal } = {}) {
-  const res = await fetch(`${config.baseURL}/chat-messages`, {
+  const res = await fetch(config.baseURL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
