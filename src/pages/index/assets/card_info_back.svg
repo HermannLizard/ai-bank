@@ -1,0 +1,17 @@
+<svg width="129" height="150" viewBox="0 0 129 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="129" height="150" fill="#1E1E1E"/>
+<g id="&#233;&#166;&#150;&#233;&#161;&#181;">
+<rect width="375" height="812" transform="translate(-26 -220)" fill="white"/>
+<rect width="375" height="812" transform="translate(-26 -220)" style="mix-blend-mode:overlay"/>
+<g id="&#233;&#147;&#182;&#232;&#161;&#140;&#229;&#141;&#161;&#228;&#191;&#161;&#230;&#129;&#175;&#229;&#164;&#135;&#228;&#187;&#189;">
+<path id="&#231;&#159;&#169;&#229;&#189;&#162;" fill-rule="evenodd" clip-rule="evenodd" d="M0 6C0 2.68629 2.68629 0 6 0H123C126.314 0 129 2.68629 129 6V144C129 147.314 126.314 150 123 150H6C2.68629 150 0 147.314 0 144V6Z" fill="url(#paint0_linear_0_1)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_1" x1="29.3074" y1="-10.789" x2="4.39445" y2="138.148" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E1E8F1"/>
+<stop offset="0.445799" stop-color="#E0E4EA"/>
+<stop offset="1" stop-color="#DCE2EA"/>
+</linearGradient>
+</defs>
+</svg>

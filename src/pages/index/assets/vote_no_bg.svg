@@ -1,0 +1,14 @@
+<svg width="146" height="36" viewBox="0 0 146 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use xlink:href="#stroke0_420_3144" fill="url(#paint0_linear_420_3144)"/>
+<mask id="stroke1_420_3144" fill="white">
+<use xlink:href="#stroke0_420_3144"/>
+</mask>
+<path d="M127.312 0H11.6156C10.7327 0 9.95423 0.578945 9.70018 1.42452L0.0858154 33.4245C-0.299779 34.7079 0.661167 36 2.00124 36H127.312C137.253 36 145.312 27.9411 145.312 18C145.312 8.05887 137.253 0 127.312 0Z" stroke-width="2" stroke="white" stroke-opacity="0.4" mask="url(#stroke1_420_3144)"/>
+<defs>
+<linearGradient id="paint0_linear_420_3144" x1="-0.687996" y1="31.0586" x2="47.0337" y2="87.5622" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5980FF"/>
+<stop offset="1" stop-color="#2E54FD"/>
+</linearGradient>
+<path id="stroke0_420_3144" d="M145.312 18C145.312 27.9411 137.253 36 127.312 36H2.00124C0.661163 36 -0.299774 34.7079 0.0858154 33.4245L9.70018 1.42452C9.95422 0.578945 10.7327 0 11.6156 0H127.312C137.253 0 145.312 8.05887 145.312 18Z" fill-rule="evenodd" clip-rule="evenodd"/>
+</defs>
+</svg>
