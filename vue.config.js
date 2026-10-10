@@ -50,6 +50,12 @@ module.exports = defineConfig({
       template: 'public/index.html',
       filename: 'chat.html',
       title: '北京银行AI次方'
+    },
+    home: {
+      entry: 'src/pages/home/main.js',
+      template: 'public/index.html',
+      filename: 'home.html',
+      title: '智享版'
     }
   }
 })

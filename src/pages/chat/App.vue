@@ -174,7 +174,7 @@
         <span v-for="tag in tags" :key="tag" class="tag" @click="send({ query: tag })">{{ tag }}</span>
       </div>
       <div class="input-bar">
-        <van-icon name="play-circle-o" size="20" class="mic" />
+        <van-icon name="play-circle-o" size="20" class="mic" @click="showVoiceInput = true" />
         <input
           v-model="inputText"
           class="chat-input"
@@ -189,6 +189,10 @@
 
     <!-- 理财产品详情（半屏） -->
     <product-detail :visible.sync="detailVisible" :product="detailProduct" @paid="onPurchasePaid" />
+    <VoiceInput 
+      v-model="showVoiceInput" 
+      @complete="onVoiceComplete" 
+    />
   </div>
 </template>
 
@@ -219,6 +223,7 @@ import returnsCalendarImg from './assets/img/returns-calendar.png'
 import returnsDetailImg from './assets/img/returns-detail.png'
 import pensionResultImg from './assets/img/pension-result.png'
 import managerCardImg from './assets/img/manager-card.png'
+import VoiceInput from './components/VoiceInput.vue'
 
 let _uid = 0
 function uid() {
@@ -244,7 +249,8 @@ export default {
     PensionAnnuityConfirm,
     PensionPrivatePension,
     PensionAssetsConfirm,
-    PensionPlanConfirm
+    PensionPlanConfirm,
+    VoiceInput,
   },
   data() {
     return {
@@ -263,7 +269,8 @@ export default {
       returnsDetailImg,
       pensionResultImg,
       managerCardImg,
-      tags: ['给小京转账100元', '理财推荐', '持仓收益', '养老规划']
+      tags: ['给小京转账100元', '理财推荐', '持仓收益', '养老规划'],
+      showVoiceInput: false,
     }
   },
   mounted() {
@@ -293,6 +300,12 @@ export default {
       if (!text) return
       this.inputText = ''
       this.send({ query: text })
+    },
+
+    // 接收语音识别结果并填入输入框
+    onVoiceComplete(text) {
+      this.inputText = text;
+      // 可以在此处自动触发发送逻辑，例如: this.sendMessage();
     },
 
     selectContact(item, contact) {
